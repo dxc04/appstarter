@@ -1,0 +1,34 @@
+.dataTables_wrapper {
+	border: 1px solid #D1D1D1;
+	float: left;
+	padding: 5px 0;
+	width: 100%;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	behavior: url(/thesis/PIE.htc);
+}
+
+.dataTables_wrapper table {
+	border-top: 1px solid #D1D1D1;
+	border-bottom: 1px solid #D1D1D1;
+}
+
+.dataTables_wrapper table th {
+	cursor: pointer;
+}
+
+.dataTables_wrapper table th, .dataTables_wrapper table td{
+	height: 15px;
+	padding: 4px 2px 4px 8px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.dataTables_wrapper .dataTables_length, 
+.dataTables_wrapper .dataTables_filter, 
+.dataTables_wrapper .dataTables_info, 
+.dataTables_wrapper .dataTables_paginate {
+	padding: 2px;
+}
