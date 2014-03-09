@@ -305,3 +305,64 @@ table.dataTable thead .sorting:after {
 .show-grid {
     margin: 15px 0;
 }
+
+/** New Navbar Style **/
+.navbar-default {
+	background-color: #5b9930;
+	border-color: #69b53d;
+}
+.navbar-default .navbar-brand {
+	color: #e2e9d4;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #ffffff;
+}
+.navbar-default .navbar-text {
+	color: #e2e9d4;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #e2e9d4;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: #ffffff;
+	background-color: #69b53d;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	color: #ffffff;
+	background-color: #69b53d;
+}
+.navbar-default .navbar-toggle {
+	border-color: #69b53d;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: #69b53d;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #e2e9d4;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #e2e9d4;
+}
+.navbar-default .navbar-link {
+	color: #e2e9d4;
+}
+.navbar-default .navbar-link:hover {
+	color: #ffffff;
+}
+
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		color: #e2e9d4;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		color: #ffffff;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		color: #ffffff;
+		background-color: #69b53d;
+	}
+}

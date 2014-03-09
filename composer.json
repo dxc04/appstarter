@@ -5,8 +5,11 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
+		"cartalyst/sentry": "2.1.*",
+		"happydemon/txt": "dev-master",
 		"dragonfire1119/asset": "dev-master",
-		"way/generators": "dev-master"
+		"way/generators": "dev-master",
+		"omnipay/paypal": "~2.0"
 	},
 	"autoload": {
 		"classmap": [

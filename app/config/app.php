@@ -108,6 +108,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Dragonfire1119\Asset\AssetServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
+		'Cartalyst\Sentry\SentryServiceProvider',
 
 	),
 
@@ -175,6 +176,8 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Asset' 	  => 'Dragonfire1119\Asset\Facades\Asset',
+		'Sentry' 	  => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+		'Carbon' 	  => 'Carbon\Carbon',
 
 	),
 
