@@ -2,7 +2,31 @@
 
 class BaseController extends Controller {
 
+	/**
+	 * Message bag.
+	 *
+	 * @var Illuminate\Support\MessageBag
+	 */
+	protected $messageBag = null;
+
 	protected $layout = 'layout.base';
+
+	/**
+	 * Initializer.
+	 *
+	 */
+	public function __construct()
+	{
+		$this->session = App::make('session');
+		$this->redirect = App::make('redirect');
+		$this->view = App::make('view');
+		$this->request = App::make('request');
+		$this->validator = App::make('validator');
+
+		// @todo: move this to config, start or global
+		$this->beforeFilter('csrf', array('on' => 'post'));
+		$this->messageBag = new Illuminate\Support\MessageBag;
+	}
 
 	/**
 	 * Setup the layout used by the controller.

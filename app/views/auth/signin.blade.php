@@ -1,6 +1,6 @@
 @section('content')
 	<legend><h3 class="text-center">Please Log In, or {{ HTML::link('signup', 'Register') }}</h3></legend>
-		{{ Form::open(array('url' => 'login')) }}
+		{{ Form::open(array('url' => 'signin')) }}
 			<div class="form-group">
 			  <label for="email">Email</label>
 			  <input type="text" name="email" class="form-control" id="email">
@@ -10,7 +10,7 @@
 			  <label for="password">Password</label>
 			  <input type="password" name="password" class="form-control" id="passsword">
 			</div>
-			<button type="submit" class="text-center col-xs-12 btn btn-success"> Log In </button>
+			<button type="submit" class="text-center col-xs-12 btn btn-lg btn-primary btn-block"> Log In </button>
       	    	{{ Form::close() }}
 	
 	<legend>&nbsp;</legend>

@@ -11,10 +11,6 @@ class AuthController extends BaseController {
 	protected $subscription_types = array(
 	);
 
-	public function __construct()
-	{
-	}
-
 	/**
 	 * Account sign in.
 	 *
@@ -65,7 +61,7 @@ class AuthController extends BaseController {
 			*/
 
 			// Redirect to the users page
-			return Redirect::to($redirect);
+			return Redirect::to('home');
 		}
 		catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
 			$this->messageBag->add('email', 'No account was associated with your email address.');
@@ -133,9 +129,8 @@ class AuthController extends BaseController {
 			$user = Sentry::register($input);
 
 	//		$this->pay($input['subscription'], $user);
-
 	//		// Redirect to the register page
-			return Redirect::back()->with('success', 'Your account has been successfully created. Please check your email for instructions on how to activate your account.');
+			return Redirect::to('signin')->with('success', 'Your account has been successfully created. Please check your email for instructions on how to activate your account.');
 		}
 		catch (Cartalyst\Sentry\Users\UserExistsException $e) {
 			$this->messageBag->add('email', 'An account with that email address already exists.');
