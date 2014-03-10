@@ -15,7 +15,7 @@ Route::get('/', 'AuthController@getSignin');
 
 Route::group(array('before' => 'auth'), function(){
 
-	Route::get("home", "HomeController@remunerations");
+	Route::get("home", "HomeController@index");
 
 });
 
