@@ -48,7 +48,14 @@
 			{{ $errors->first('subscription', '<span class="help-block">:message</span>') }}
 		</div>
 -->
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+		<div class="form-group">
+			<div class="col-md-6">
+				<button class="btn btn-md btn-primary btn-block" type="submit">Sign up</button>
+			</div>
+			<div class="col-md-6">
+				<a href="{{ url('signin') }}" class="btn btn-md btn-default btn-block">Cancel</a>
+			</div>  
+		</div>
 	{{ Form::close() }}
 
 	<legend>&nbsp;</legend>

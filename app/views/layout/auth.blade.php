@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Dixie Philamerah Atay">
 
-    <title>Remuneration</title>
+    <title>Product Name</title>
 
     <!-- Custom CSS for the 'Full' Template -->
     {{ Asset::container('header')->styles() }}

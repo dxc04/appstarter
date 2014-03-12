@@ -9,7 +9,8 @@
 		"happydemon/txt": "dev-master",
 		"dragonfire1119/asset": "dev-master",
 		"way/generators": "dev-master",
-		"omnipay/paypal": "~2.0"
+		"omnipay/paypal": "~2.0",
+		"ensepar/tcpdf": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

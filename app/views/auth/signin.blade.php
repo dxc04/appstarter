@@ -10,7 +10,7 @@
 			  <label for="password">Password</label>
 			  <input type="password" name="password" class="form-control" id="passsword">
 			</div>
-			<button type="submit" class="text-center col-xs-12 btn btn-lg btn-primary btn-block"> Log In </button>
+			<button type="submit" class="text-center col-xs-12 btn btn-md btn-primary btn-block"> Log In </button>
       	    	{{ Form::close() }}
 	
 	<legend>&nbsp;</legend>

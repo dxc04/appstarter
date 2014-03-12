@@ -127,6 +127,7 @@ class AuthController extends BaseController {
 			// Register the user
 	//		$input['valid_until'] = $this->getValidUntil($input['subscription']);
 			$user = Sentry::register($input);
+			$this->paid($user->id);
 
 	//		$this->pay($input['subscription'], $user);
 	//		// Redirect to the register page
@@ -315,7 +316,7 @@ class AuthController extends BaseController {
 		Sentry::logout();
 
 		// Redirect to the users page
-		return Redirect::route('home');
+		return Redirect::route('signin');
 	}
 	
 	public function checkAuth()
@@ -337,6 +338,7 @@ class AuthController extends BaseController {
 	public function paid($user_id)
 	{
 		$user = User::find($user_id);
+
 		if ( ! $user) {
 			//@ todo throw an error
 			return Redirect::route('signup')->with('error', 'User not found');
@@ -345,6 +347,7 @@ class AuthController extends BaseController {
 		$data = array(
 			'user'          => $user,
 			'activationUrl' => URL::route('activate', $user->getActivationCode()),
+			'product'	=> 'Product Name',
 		);
 
 		// Send the activation code through email
