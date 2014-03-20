@@ -22,7 +22,6 @@ class AuthController extends BaseController {
 		if (Sentry::check()) {
 			return Redirect::to('home');
 		}
-
 		// Show the page
 		$this->layout->content = View::make('auth.signin');
 	}
@@ -48,10 +47,25 @@ class AuthController extends BaseController {
 			// Ooops.. something went wrong
 			return Redirect::back()->withInput()->withErrors($validator);
 		}
-
+		
+		$practicepro_user = $this->_enrollUserToApp();
+		
+		if (!$practicepro_user) {
+			$this->messageBag->add('email', 'No account was associated with your email address.');
+			return Redirect::back()->withInput()->withErrors($this->messageBag);
+		}
+		
 		try {
-			// Try to log the user in
-			$user = Sentry::authenticate(Input::only('email', 'password'), Input::get('remember-me', 0));
+
+			$credentials = [
+				"email" => $practicepro_user[0]->mh2_email,
+				"password" => PracticeProUser::APP_PASSWORD
+			];
+				
+			Sentry::authenticate($credentials, Input::get('remember-me', 0));
+				
+			// save user info to the current session
+			Session::put('practicepro_user', $practicepro_user[0]);
 			
 			/*
 			if ( ! $this->isValid($user)) {
@@ -60,7 +74,6 @@ class AuthController extends BaseController {
 			}
 			*/
 
-			// Redirect to the users page
 			return Redirect::to('home');
 		}
 		catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
@@ -312,6 +325,10 @@ class AuthController extends BaseController {
 	 */
 	public function getLogout()
 	{
+		// remove generated graph images first
+		$session_id = Session::getId();
+		File::deleteDirectory(public_path() . '/images/cache/' . $session_id);
+
 		// Log the user out
 		Sentry::logout();
 
@@ -419,6 +436,36 @@ class AuthController extends BaseController {
 		}
 	}
 	
+	protected function _enrollUserToApp()
+	{
+		$practicepro_user = NULL;
+		
+		if ($practicepro_user = PracticeProUser::findByEmail(Input::get("email"), Input::get("password"))) {
+
+			// fetch corresponding app user using practicepro user_id
+			$app_user = User::findPracticeProUser($practicepro_user[0]->mh2_id);
+
+			if (!$app_user) {
+				// add the user
+				$user = Sentry::register(array(
+					'email'    	=> $practicepro_user[0]->mh2_email,
+					'password' 	=> PracticeProUser::APP_PASSWORD,
+					'first_name'	=> $practicepro_user[0]->mh2_fname,
+					'last_name'	=> $practicepro_user[0]->mh2_lname,
+				));
+				$user->attemptActivation($user->getActivationCode());
+				$user->save();
+			}
+			else {
+
+				// we need to update email address if in case practicepro user updated theirs
+				$app_user->email = $practicepro_user[0]->mh2_email;
+				$app_user->save();
+			}
+		}
+		
+		return $practicepro_user;
+	}
 
 }
 

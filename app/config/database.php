@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'database',
+			'database'  => 'priceplannerpro',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'admin123',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -82,6 +82,30 @@ return array(
 			'password' => '',
 			'prefix'   => '',
 		),
+
+		'practicepro_users' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'practicepro_users',
+			'username'  => 'root',
+			'password'  => 'admin123',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+        	),
+
+		'mysql_cc' => array(
+			'driver'    => 'mysql',
+			'host'      => 'mysqlsdb.co8hm2var4k9.eu-west-1.rds.amazonaws.com',
+			'database'  => 'depcuumb62u',
+			'username'  => 'depcuumb62u',
+			'password'  => 'K8bJuoIjcjyZ',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+			'port'	    => '3306'
+		),
+
 
 	),
 

@@ -312,8 +312,8 @@ table.dataTable thead .sorting:after {
 
 /** New Navbar Style **/
 .navbar-default {
-	background-color: #5b9930;
-	border-color: #69b53d;
+	background-color: #34AC94;
+	border-color: #3DB5A2;
 }
 .navbar-default .navbar-brand {
 	color: #e2e9d4;
@@ -332,17 +332,17 @@ table.dataTable thead .sorting:after {
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: #ffffff;
-	background-color: #79A75E;
+	background-color: #339686;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
 	color: #ffffff;
-	background-color: #69b53d;
+	background-color: #3DB5A2;
 }
 .navbar-default .navbar-toggle {
-	border-color: #69b53d;
+	border-color: #3DB5A2;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-	background-color: #69b53d;
+	background-color: #3DB5A2;
 }
 .navbar-default .navbar-toggle .icon-bar {
 	background-color: #e2e9d4;
@@ -359,7 +359,7 @@ table.dataTable thead .sorting:after {
 }
 
 #side-menu > li {
-	background-color: #B5CABA; 
+	background-color: #B5C7CA; 
 }
 
 #side-menu > li > a {
@@ -371,15 +371,11 @@ table.dataTable thead .sorting:after {
 }
 
 .nav > li > a:hover {
-	background-color: #B5CABA; 
+	background-color: #B5C7CA; 
 }
 
 .nav > li .active {
 	background-color: #88B395; 
-}
-
-.navbar-static-top {
-	background-color: #72B346
 }
 
 .app-nav {
@@ -395,10 +391,13 @@ table.dataTable thead .sorting:after {
 	}
 	.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
 		color: #ffffff;
-		background-color: #69b53d;
+		background-color: #3DB5A2;
 	}
 }
 
 #app-nav {
 	margin-left: 250px;
+}
+.form-control:focus {
+	border: 2px solid #18bc9c;
 }

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Product Name</title>
+    <title>Price Planner Pro</title>
     {{ Asset::container('header')->styles() }}
 
 </head>
@@ -15,7 +15,7 @@
 
     <div id="wrapper">
 
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -39,7 +39,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{ url('logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -51,7 +51,7 @@
         </nav>
         <!-- /.navbar-static-top -->
 
-        <nav class="navbar-default navbar-static-side" role="navigation">
+        <nav class="navbar-inverse navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
@@ -64,7 +64,7 @@
         </nav>
         <!-- /.navbar-static-side -->
 
-	<nav id="app-nav" class="navbar navbar-default " role="navigation">
+	<nav id="app-nav" class="navbar navbar-default" role="navigation">
 	  <!-- Collect the nav links, forms, and other content for toggling -->
 	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	    <ul class="nav navbar-nav">

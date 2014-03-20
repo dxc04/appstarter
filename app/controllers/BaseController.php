@@ -38,10 +38,10 @@ class BaseController extends Controller {
 		/** Start adding styles  **/
 		Asset::container('header')->add('bootstrap-css', 'plugins/bootstrap/css/bootstrap.min.css');
 		Asset::container('header')->add('fontawesome-css', 'plugins/font-awesome/css/font-awesome.min.css');
+		Asset::container('header')->add('sb-admin-css', 'css/base/sb-admin.css');
 	
 		if ($this->layout != 'layout.auth') {
 			Asset::container('header')->add('datepicker-css', 'plugins/datepicker/css/datepicker.css');
-			Asset::container('header')->add('sb-admin-css', 'css/base/sb-admin.css');
 			Asset::container('header')->add('bootstrap-notify-master-css', 'plugins/bootstrap-notify-master/css/bootstrap-notify.css');
 			Asset::container('header')->add('datatables-css', 'plugins/datatable/media/css/demo_table.css');
 			Asset::container('header')->add('custom-datatable-css', 'plugins/datatable/media/css/custom_datatable.css');
